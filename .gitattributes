@@ -1,1 +1,2 @@
 Sources/FSound.xcframework/ios-arm64/FSound.framework/FSound filter=lfs diff=lfs merge=lfs -text
+Sources/TensorFlowLiteSelectTfOps.xcframework/ios-arm64/TensorFlowLiteSelectTfOps.framework/TensorFlowLiteSelectTfOps filter=lfs diff=lfs merge=lfs -text
