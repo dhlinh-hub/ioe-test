@@ -20,7 +20,14 @@ let package = Package(
               .binaryTarget(name: "TensorFlowLiteSelectTfOps", path: "Sources/TensorFlowLiteSelectTfOps.xcframework"),
         
         .target(
-            name: "ioe-sdk", dependencies: ["FSound", "TensorFlowLiteC", "TensorFlowLiteSelectTfOps"]),
+            name: "ioe-sdk", dependencies: ["FSound", "TensorFlowLiteC", "TensorFlowLiteSelectTfOps"],
+            path: "Sources",
+            resources: [
+                .copy("FSound.xcframework"),
+                .copy("TensorFlowLiteC.xcframework"),
+                .copy("TensorFlowLiteSelectTfOps.xcframework"),
+            ]
+        ),
         .testTarget(
             name: "ioe-sdkTests",
             dependencies: ["ioe-sdk"]),
