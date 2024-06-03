@@ -11,6 +11,9 @@ let package = Package(
             name: "ioe-sdk",
             targets: ["ioe-sdk"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/dhlinh-hub/ioe-test.git", branch: "main"),
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
@@ -21,15 +24,10 @@ let package = Package(
         
         .target(
             name: "ioe-sdk", dependencies: ["FSound", "TensorFlowLiteC", "TensorFlowLiteSelectTfOps"],
-            path: "Sources",
-            resources: [
-                .copy("FSound.xcframework"),
-                .copy("TensorFlowLiteC.xcframework"),
-                .copy("TensorFlowLiteSelectTfOps.xcframework"),
-            ]
-        ),
+            path: "Sources"),
         .testTarget(
             name: "ioe-sdkTests",
             dependencies: ["ioe-sdk"]),
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
